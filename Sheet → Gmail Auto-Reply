@@ -1,0 +1,48 @@
+# 🚀 Lead Automation (Google Sheets → Gmail)
+
+## 📌 Overview
+This workflow automates lead response using n8n.
+
+When a new lead is added to Google Sheets, an email is automatically sent using Gmail.
+
+---
+
+## ⚙️ Tools Used
+- n8n
+- Google Sheets
+- Gmail
+
+---
+
+## 🔄 Workflow Logic
+1. Trigger: New row added in Google Sheets  
+2. Extract data (Name, Email, Phone, Service)  
+3. Send personalized email via Gmail  
+
+---
+
+## ✉️ Example Email
+Subject: Thanks {{Name}}!
+
+Body:
+Hello {{Name}},  
+Thank you for your interest in {{Service}}. We will contact you soon.
+
+---
+
+## 📸 Screenshots
+<img width="830" height="559" alt="image" src="https://github.com/user-attachments/assets/5c78724c-1cb2-4b4c-9efc-353ea9836b4d" />
+<img width="1911" height="877" alt="image" src="https://github.com/user-attachments/assets/c43feee3-986c-4776-8d1c-ce3bfe1c92d8" />
+---
+
+## 🎯 Use Case
+Perfect for:
+- Small businesses
+- Freelancers
+- Lead generation systems
+
+---
+
+## 📂 File
+- Sheet →  → Import directly into n8n
+
