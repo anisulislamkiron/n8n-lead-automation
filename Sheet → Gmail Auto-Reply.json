@@ -1,0 +1,96 @@
+{
+  "name": "Sheet → Gmail Auto-Reply",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1ta_a-6x4ZTeEnMIS6mFjxGiyiDosy9LawNGlygX3Mkc",
+          "mode": "list",
+          "cachedResultName": "N8n Demo 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ta_a-6x4ZTeEnMIS6mFjxGiyiDosy9LawNGlygX3Mkc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "n8n 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1ta_a-6x4ZTeEnMIS6mFjxGiyiDosy9LawNGlygX3Mkc/edit#gid=0"
+        },
+        "event": "rowAdded",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "5929c7e9-7ca2-428b-b0da-9968c9e22e18",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "zi1xMpHfrR1z8LE2",
+          "name": "Google Sheets Trigger OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Email }}",
+        "subject": "=Hello,  {{ $json.Name }}",
+        "emailType": "text",
+        "message": "=Welcome, {{ $json.Name }}\nThanks for reaching out.",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "a1a20bc0-0aa1-4828-bf47-a056e5980389",
+      "name": "Send a message",
+      "webhookId": "70a4cba5-8863-4e5a-9e85-4fe8c89f0ae2",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "jbOzCAybw30LRdzb",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "b82d9f3b-ee81-4e6d-9c84-e58de3fbebf0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e0f0cd81866137481544221ab75e86c79b4683d83f6834306c7e1f433665919e"
+  },
+  "id": "LiBrS3WDgxvNDISl",
+  "tags": []
+}
